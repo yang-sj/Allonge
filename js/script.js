@@ -76,8 +76,9 @@ $(function () {
   $('.popup_open2').click(function () {
     $('.popup_wrap2').fadeIn(0);
   });
-  //close_btn을 클릭하면,popup이 안보인다.
+  //close_btn을 클릭하면,popup 닫고 영상정지.
   $('.close_btn2').click(function () {
     $('.popup_wrap2').fadeOut(0);
+    $("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
   });
 });
